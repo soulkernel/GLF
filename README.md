@@ -1,5 +1,7 @@
 # Portal GLF
 
+Para continuar desde cualquier proyecto, comenzar por el [contexto maestro de aplicaciones GLF](docs/CONTEXTO_MAESTRO_GLF.md): repositorios, ramas, decisiones, dependencias y protocolo de actualización entre proyectos.
+
 `index.html` mantiene el centro público de accesos existente.
 
 La rama `feat/portal-accesos-centralizados` inicia la administración institucional única. Diseño y secuencia: [Arquitectura](docs/ARQUITECTURA_PORTAL_Y_ACCESOS.md).
