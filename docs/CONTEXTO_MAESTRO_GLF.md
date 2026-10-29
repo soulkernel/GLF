@@ -49,6 +49,7 @@ Estos valores son una fotografía fechada, no una garantía de que la rama no ha
 | GLF-008 | Menú principal completo para usuarios internos, con accesos no autorizados visibles pero deshabilitados. | No mostrar datos reservados en indicadores, respuestas o herramientas de previsualización. |
 | GLF-009 | Conservar diseño gráfico GLF y español/inglés. | Los cambios compartidos deben revisar textos, accesibilidad y consistencia entre aplicaciones. |
 | GLF-010 | Cada alta y cambio de permisos debe mostrar su estado por aplicación. | Pendiente de integración central. Fallo parcial debe ser visible y reintentable; no informar éxito total prematuro. |
+| GLF-011 | En Operaciones/KYC hay un solo manual interno completo para todos los usuarios internos y otro independiente para destinatarios externos. | Implementado y publicado. La lectura del manual interno no se restringe por rol ni concede facultades operativas. Mantener esta distinción al integrar el portal. |
 
 Arquitectura y límites: [ARQUITECTURA_PORTAL_Y_ACCESOS.md](ARQUITECTURA_PORTAL_Y_ACCESOS.md). Contratos existentes y siguiente resultado verificable: [INTEGRACION_Y_ESTADO.md](INTEGRACION_Y_ESTADO.md). Este registro no sustituye esas especificaciones ni autoriza ampliar permisos reales.
 
@@ -99,3 +100,4 @@ Este repositorio es público. Registrar arquitectura, decisiones y referencias t
 
 - 2026-10-28: base técnica del portal en `ce8c806`; administración conectada pendiente.
 - 2026-10-28: a solicitud del usuario se establece este registro maestro, con referencias desde los proyectos y protocolo de actualización para continuar entre chats sin duplicar acuerdos.
+- 2026-10-28: Operaciones/KYC publica manuales ES/EN en `soulkernel/Prototipo.Proveedores.KYC`, `main`, commit `0d37fe72aecf036702ce44b944e5567f16d8c948`. Vercel confirma despliegue satisfactorio y CI termina correctamente (run `40808471075`). Manual interno: menú **Manual interno**, 15 capítulos para todos los perfiles internos; externo: [Manual del formulario KYC](https://glf-operaciones-kyc-archivo.vercel.app/manual-externo.html), 10 capítulos sin procedimientos internos. Ambos incluyen capturas, búsqueda y Word/PDF completos. Pruebas locales de perfil de consulta, ES/EN, móvil y ocho descargas; verificación pública de acceso externo, cuatro descargas y hashes de las 34 capturas. Documentos de 16 páginas internas y 11 externas en cada idioma. Sin cambios de contratos de identidad, permisos, migraciones o datos. La integración del portal y del correo automático continúa pendiente.
