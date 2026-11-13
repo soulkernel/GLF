@@ -134,3 +134,12 @@ Recepción física o electrónica: remitente, fecha, canal, número de origen o 
 97 pruebas automatizadas aprobadas y recorrido local Edge con ES/EN, móvil, permisos, carga y filtros. Prueba autenticada publicada: recepción sintética cargada y numerada, salida vinculada aprobada y numerada, ambas bandejas comprobadas tras recarga. Sin firmas ni envíos reales. Proveedores y KYC conservados; almacenamiento privado y RLS verificados. Ajuste final: etiqueta del historial de recepción y conservación de búsqueda al volver desde contactos; compilación y 13 pruebas documentales repetidas satisfactoriamente.
 
 No cambia identidad compartida, MFA ni permisos de usuarios. OAuth Gmail, Drive, administración central interaplicaciones y asignaciones definitivas del personal siguen pendientes. Implementación y límites en aplicacion-proveedores-kyc/CORRESPONDENCIA.md; evidencia operativa y registros de prueba en contexto reservado.
+
+
+## Borradores de correspondencia publicados — 13/11/2026
+
+Operaciones/KYC: a8dfe5d38745a46a79fa0f8267894b313f517193, rama feat/correspondencia-borradores integrada por avance directo en main. Once archivos seleccionados, hashes cotejados. Vercel satisfactorio en producción y migración 028 aplicada en Supabase (Success. No rows returned). Conserva identidad, MFA, permisos y numeración; sin nuevas tablas ni columnas.
+
+Oficios de salida incorpora Borradores con conteo limitado a documentos autorizados, asunto, autor, última modificación y Continuar edición. Guardar borrador exige solo asunto con fecha precargada; destinatario, contenido y firmante se validan antes de remitir a firma, en cliente y servidor. No asigna número ni despacha. Guardado explícito con fecha y hora. Navegación interna ofrece Guardar y salir / Salir sin guardar / Seguir editando, incluso al cambiar de módulo o cerrar sesión. Cerrar o recargar la pestaña usa el aviso nativo del navegador; no hay autoguardado. Control de versión impide sobrescribir cambios concurrentes.
+
+Verificación: 16 pruebas documentales y 17 generales aprobadas; dos recorridos Edge (borradores y flujo completo), ES/EN y móvil. En producción, con la sesión interna existente, se guardó un borrador sintético sin destinatario ni firmante, se añadió contenido mediante Guardar y salir, se recargó y se recuperó desde Borradores. No se concedieron accesos, firmaron documentos ni enviaron correos. El documento de prueba permanece sin número. OAuth Gmail, Drive y administración central interaplicaciones conservan su estado pendiente.
