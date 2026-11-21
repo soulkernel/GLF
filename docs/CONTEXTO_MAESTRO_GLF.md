@@ -190,3 +190,23 @@ Propuesta detallada: [Organización visual de Correspondencia](ANALISIS_INTERFAZ
 Prevalece el procedimiento GLF: firma externa, carga del PDF firmado y despacho como acciones distintas. No se adoptan la impresión/tramitación física de Quipux, su firma-envío combinado, límites antiguos, numeración, permisos ni gestión documental interna completa. Se conservan plantilla PDF, numeración, contratos body/body_format, archivos privados y atribuciones existentes. No se modificaron código funcional, Supabase, permisos, correos ni Vercel.
 
 Siguiente paso: revisar la distribución propuesta y autorizar su implementación en Operaciones/KYC. Esta actualización solo comparte documentación; no sincroniza automáticamente los historiales de otros chats ni habilita integraciones pendientes.
+
+
+## 21/11/2026 — Correspondencia: bandejas y área de redacción publicadas
+
+Estado: implementación autorizada por el usuario, activada en Supabase y publicada en Vercel. Sustituye el estado de propuesta pendiente del análisis visual Quipux del 19/11/2026. Se conserva el procedimiento GLF y su identidad gráfica.
+
+- Bandejas laterales de recibidos (todos, en atención, cerrados) y salidas (borradores, para firma, por enviar, enviados, todos). Agrupación de estados y conteos filtrados antes de paginar, bajo permisos del servidor. No se crean tablas ni se duplican registros para las bandejas.
+- Búsqueda compacta, filtros adicionales desplegables y recuperación de búsqueda, página y posición al regresar al listado. Acciones contextuales con iconos.
+- Redacción en hoja amplia, datos del oficio compactos, buscador de destinatarios y acciones superiores Guardar borrador/Vista previa/Volver. Se conserva selección, formato por párrafo, borradores incompletos y aviso de cambios sin guardar. Los anexos permanecen debajo del contenido tanto en lectura como en edición.
+- Accesos Documento/Anexos/Seguimiento por desplazamiento. Entrada muestra el oficio principal separadamente; Ver oficio abre su PDF privado. Disposiciones, responsables, plazos y respuestas vinculadas se reutilizan sin reemplazar el historial.
+- Vista previa sin guardar, numerar, aprobar o enviar. La verificación en Chrome publicado detectó bloqueo del visor PDF nativo; se sustituyó por PDF.js 5.4.624 de carga diferida, worker y recursos del mismo origen. Renderiza una página a la vez con anterior/siguiente, mantiene el PDF original descargable y no remite archivos a terceros. La apertura inicial de la aplicación no carga el visor. Se conservan X-Frame-Options DENY, object-src none y frame-ancestors none; frame-src none, worker-src self.
+
+Publicación: repositorio `soulkernel/Prototipo.Proveedores.KYC`, carpeta `aplicacion-proveedores-kyc/`; implementación `806986f37c0494cd17308e16625e947083d3b71c`, rama `feat/correspondencia-bandejas-editor`. Corrección del visor y versión final en main `601e37772fcc2ee403f2f0f313553f57dbb11a8c`, rama `fix/correspondencia-preview-pdf`. Archivos seleccionados cotejados por hash; no se publicó la raíz documental. Vercel informó Deployment has completed para la versión final. Aplicación: https://glf-operaciones-kyc-archivo.vercel.app/.
+
+Supabase: migración `202611210032_records_workspace.sql` aplicada. Conserva el núcleo anterior como `core_v031` privado sin ejecución directa por roles cliente; RPC list ampliada con bandeja y total legible. No añade tablas, columnas, identidades ni permisos. Se comparó el cuerpo de la función vigente antes de migrar y se verificaron después conservación de documentos/archivos/eventos, hash de función y ausencia de ejecución directa del núcleo. Firma, despacho, numeración anual, RLS, MFA y documentos anteriores se conservan.
+
+Pruebas: 22 automatizadas satisfactorias de modelo, migraciones, flujo, archivos, aislamiento, permisos, MFA, numeración, formato, seguimiento y bandejas/paginación. Recorridos locales Edge de entrada con anexos, salida, respuesta, borradores, formato/cursor, PDF, destinatarios, filtros/paginación, ES/EN y móvil; visor verificado con todas las cabeceras de Vercel, documento multipágina y retorno al editor sin guardar. Verificación autenticada en producción: bandeja de recibidos, tres borradores existentes, dos registros para firma, lectura de seguimiento/respuesta vinculada y PDF principal renderizado correctamente en Chrome. No se repitieron escrituras, firma ni envío en producción en esta sesión.
+
+Sin cambios en alta centralizada interaplicaciones, OAuth de correo ni integración Drive; sus estados y dependencias previos continúan. Esta nota documenta y comparte la versión, sin sincronizar automáticamente los historiales de otros chats.
+
