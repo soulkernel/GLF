@@ -210,3 +210,14 @@ Pruebas: 22 automatizadas satisfactorias de modelo, migraciones, flujo, archivos
 
 Sin cambios en alta centralizada interaplicaciones, OAuth de correo ni integración Drive; sus estados y dependencias previos continúan. Esta nota documenta y comparte la versión, sin sincronizar automáticamente los historiales de otros chats.
 
+
+
+## 21/11/2026 — Auditoría integral de Correspondencia
+
+Solicitud: probar recepción -> respuesta -> envío -> cierre y entregar informe. Recorrido local aislado con datos sintéticos y cabeceras de Vercel: oficio principal + 2 anexos, validación de archivo obligatorio, asignación, disposición con respuesta requerida, atención con evidencia, respuesta vinculada reutilizable, autor/firmante distintos, anexo de respuesta, aprobación, vista/descarga PDF, registro simulado de revisión de firma, preparación de correo con alternativa manual, constancia de envío simulada, trazabilidad en el antecedente, cierre y recuperación tras recarga. Resultado satisfactorio, cero errores JavaScript. 26 pruebas automatizadas de modelo/servidor satisfactorias (22 previas + 4 complementarias, incluidas 2 auxiliares repetidas), con PostgreSQL embebido y migraciones reales; aceptación del proveedor de correo simulada, sin transmisión real.
+
+Hallazgo corregido: el acceso Seguimiento apuntaba a una clase ausente en su tarjeta. Se agregó la referencia, se verificó el desplazamiento animado y se repitió el ciclo completo. Publicado main 14c28921c69317c1fe3244b4f426de99f62b8d17 en soulkernel/Prototipo.Proveedores.KYC desde fix/correspondencia-seguimiento-audit; cinco archivos cotejados. Vercel Deployment has completed. Sin migraciones, permisos nuevos o cambios en expedientes existentes.
+
+Pendiente confirmado por inspección de Supabase en esta sesión: Edge Functions muestra Deploy your first edge function; correspondence-send no está desplegada. El código de envío existe, pero faltan despliegue/configuración y autorización OAuth institucional. El flujo operativo disponible es envío externo manual y registro de constancia. No declarar que descargar/aprobar equivale a enviar. No se probó firma con certificado ni entrega a un destinatario real; el ciclo de escritura completo se realizó localmente, no en Supabase de producción.
+
+Siguiente validación: tras configurar el buzón institucional, ensayo autorizado con firma real y entrega a un destinatario controlado, comprobando adjuntos, acuse y trazabilidad. El informe local detalla etapas, evidencias y límites; no se publican expedientes ni capturas privadas en el repositorio central.
